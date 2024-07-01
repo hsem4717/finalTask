@@ -10,21 +10,6 @@
   width: 100%;
 }
 
-.video-item {
-  display: flex;
-  flex-direction: column; /* 세로로 정렬 */
-  align-items: center;
-  margin-bottom: 30px;
-  width: 30%; /* 1열로 나타나도록 너비 조정 */
-  color: black;
-}
-
-.rank {
-  font-size: 30px; /* 순위 숫자 크기 조정 */
-  font-weight: bold;
-  margin-bottom: 10px; /* 순위와 YouTube 비디오 간 간격 조정 */
-}
-
 .video-description {
   color: black;
   margin-top: 10px;

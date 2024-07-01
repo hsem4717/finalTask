@@ -3,19 +3,19 @@ import React from 'react';
 import YouTube from 'react-youtube';
 import './VideoList.css';
 
-const VideoList = ({ sortedVideoIds, opts, videoTitles, viewCounts, viewCountDifferences }) => {
+const VideoList = ({ videoData, opts }) => {
   return (
     <div className="video-list">
-      {sortedVideoIds.map((videoId, index) => (
+      {videoData.sortedVideoIds.map((videoId, index) => (
         <div className="video-item" key={videoId}>
           <span className="rank">{index + 1}</span>
           <YouTube videoId={videoId} opts={opts} />
           <p className="video-description">
-            {videoTitles[videoId]}
+            {videoData.videoTitles[videoId]}
             <br />
-            조회수: {viewCounts[videoId]}
+            조회수: {videoData.viewCounts[videoId]}
             <br />
-            조회수 증가량: {viewCountDifferences[videoId]}
+            조회수 증가량: {videoData.viewCountDifferences[videoId]}
           </p>
         </div>
       ))}

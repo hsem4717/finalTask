@@ -7,3 +7,19 @@
   margin-top:100px;
   border-radius:20px;
 }
+
+.logos1 {
+  width: 200px;
+  margin-top:45px;
+}
+.logos2 {
+  width: 200px;
+  margin-top:55px;
+  margin-left:10px;
+}
+
+.logos3 {
+  width: 200px;
+  margin-top:45px;
+  margin-left:-27px;
+}
