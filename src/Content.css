@@ -1,0 +1,19 @@
+.notice-container {
+  background-color: white; /* 배경색 */
+  padding: 20px; /* 안쪽 여백 */
+  border-radius: 8px; /* 모서리 둥글게 */
+  margin-bottom: 20px; /* 아래 여백 */
+
+}
+
+.notice-title {
+  color: #333; /* 글자색 */
+  font-size: 24px; /* 글자 크기 */
+  margin-bottom: 10px; /* 아래 여백 */
+}
+
+.notice-content {
+  color: #666; /* 글자색 */
+  font-size: 16px; /* 글자 크기 */
+  line-height: 1.6; /* 줄 간격 */
+}

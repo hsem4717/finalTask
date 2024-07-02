@@ -113,6 +113,40 @@ app.get('/video-stats', (req, res) => {
   });
 });
 
+app.get('/content/:id', (req, res) => {
+  const noticeId = req.params.id;
+  connection.query(`SELECT * FROM notice WHERE id = ${mysql.escape(noticeId)}`, (error, results, fields) => {
+    if (error) {
+      console.error('쿼리 오류:', error);
+      res.status(500).json({ error: '서버 내부 오류' });
+      return;
+    }
+
+    // 쿼리 결과가 있는 경우 결과를 JSON 형식으로 반환
+    if (results.length > 0) {
+      res.json(results[0]); // 첫 번째 결과만 반환 (단일 공지사항 조회라고 가정)
+    } else {
+      res.status(404).json({ error: '해당 ID의 공지사항을 찾을 수 없습니다.' });
+    }
+  });
+});
+
+
+
+app.get('/notice-stats', (req, res) => {
+  // MySQL 쿼리: minute_stats 테이블에서 모든 데이터 가져오기
+  connection.query('SELECT * FROM notice', (error, results, fields) => {
+    if (error) {
+      console.error('쿼리 오류:', error);
+      res.status(500).json({ error: '서버 내부 오류' });
+      return;
+    }
+
+    // 조회수 데이터를 JSON 형식으로 반환
+    res.json(results);
+  });
+});
+
 // 서버를 3001 포트에서 실행
 const PORT = 3001;
 app.listen(PORT, () => {

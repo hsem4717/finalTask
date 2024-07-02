@@ -24,4 +24,22 @@ export const fetchVideoStats = async () => {
 };
 
 
+export const fetchNoticeData = async () => {
+  try {
+    const response = await axios.get('http://localhost:3001/notice-stats'); // 서버 URL 수정
+    return response.data;
+  } catch (error) {
+    console.log('Failed to fetch video data:', error);
+    throw error;
+  }
+};
 
+export const fetchNoticeStats = async () => {
+  try {
+    const response = await axios.get('http://localhost:3001/notice-stats'); // 서버 URL 수정
+    return response.data;
+  } catch (error) {
+    console.log('Failed to fetch video stats:', error);
+    throw error;
+  }
+};

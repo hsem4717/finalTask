@@ -1,6 +1,5 @@
 // Header.js
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from './Logo.svg';
 import './Header.css'; // 필요한 스타일링이 있으면 이 파일에 추가
 

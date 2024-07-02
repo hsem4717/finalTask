@@ -45,22 +45,18 @@ const Rank = () => {
       {videoStats.map((video, index) => (
         <div key={index} className="rank-header">
           <div className="sunup1">
-            <div>순위</div>
             <div className="rank-number">{index + 1}</div>
           </div>
           <div className="sunup2">
-            <div className = "description">곡정보</div>
             <div className="video-name">
               <img src={video.thumbnailUrl} alt="video thumbnail" className="thumbnail-img"/>
             </div>
           </div>
           <div className="sunup3">
-            <div>제목</div>
             <div>{video.name}</div>
             <div className = "singer">{video.singer}</div>
           </div>
           <div className="sunup4">
-            <div>증가량</div>
             <div className="increase">{video.increase}</div>
           </div>
         </div>

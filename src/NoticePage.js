@@ -2,9 +2,9 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import SmallBox from './SmallBox';
-import Rank from './Rank';
 import './App.css';
 import { initialVideoTitles, initialOpts, fetchVideoData } from './VideoData';
+import Notice from './Notice'
 function Home() {
   const [viewCounts, setViewCounts] = useState({});
   const [viewCountDifferences, setViewCountDifferences] = useState({});
@@ -42,12 +42,12 @@ function Home() {
           <SmallBox />
           <div className="HHeader">
               <div className = "Rank_Header">
-              <div className="sun1">순위</div>
-              <div className="sun2">곡정보</div>
-              <div className="sun3">제목</div>
-              <div className="sun4">증가량</div>
+              <div className="sun1">공지번호</div>
+              <div className="sun2">제목</div>
+              <div className="sun3">작성자</div>
+              <div className="sun4">등록일</div>
               </div>
-              <Rank videoData={videoData} opts={initialOpts} />
+              <Notice videoData={videoData} opts={initialOpts} />
           </div>
         </div>
       </header>

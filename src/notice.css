@@ -5,35 +5,28 @@
   margin-right:4%;
   border-radius:20px;
   margin-bottom:50px;
+  overflow-y: auto;
 }
-  .rank-header{
+ .rank-heade{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-size:25px;
     margin-top:20px;
-
+    height:50px;
  }
-
- .sunup1{
-    width:150px;
-    justify-content: center;
-
+  .sunu1{
+    width:200px;
  }
- .sunup2{
- width:380px;
- display:flex;
- justify-content: center;
-
+ .sunu2{
+width:380px;
  }
- .sunup3{
-  width:270px;
-   justify-content: center;
+ .sunu3{
+ width:240px;
  }
- .sunup4{
- width:210px;
-   justify-content: center;
- }
+ .sunu4{
+ width:235px;
+}
 .rank-number{
 font-size:30px;
 }
@@ -41,16 +34,14 @@ font-size:30px;
     width: auto;
     height: 180px;
 }
-.video-name{
-display:flex;
-align-items:center;
+.notice-name{
 }
 
 .last-week-rank{
     font-size:30px;
 }
 .increase{
-    font-size:25px;
+    font-size:20px;
     display:block;
 }
 .singer{
