@@ -1,11 +1,12 @@
-// Home.js
 import React, { useState, useEffect } from 'react';
+import 'react-calendar/dist/Calendar.css';
+import './cal.css';
+import CalendarComponent from './CalendarComponent';
 import Header from './Header';
 import SmallBox from './SmallBox';
-import Rank from './Rank';
 import './Header.css'; // 필요한 스타일링이 있으면 이 파일에 추가
 import './App.css';
-import { initialVideoTitles, initialOpts, fetchVideoData } from './VideoData';
+import {fetchVideoData } from './VideoData';
 function Home() {
   const [viewCounts, setViewCounts] = useState({});
   const [viewCountDifferences, setViewCountDifferences] = useState({});
@@ -28,28 +29,13 @@ function Home() {
     const intervalId = setInterval(fetchData, 10 * 60 * 1000);
     return () => clearInterval(intervalId);
   }, []);
-
-  const videoData = {
-    viewCounts,
-    viewCountDifferences,
-    videoTitles: initialVideoTitles,
-  };
-
   return (
     <div className="App">
       <Header />
       <header className="App-header">
         <div className="backbody">
           <SmallBox />
-          <div className="HHeader">
-              <div className = "Rank_Header">
-              <div className="sun1">순위</div>
-              <div className="sun2">곡정보</div>
-              <div className="sun3">조회수 증가량</div>
-              <div className="sun4">조회수</div>
-              </div>
-              <Rank videoData={videoData} opts={initialOpts} />
-          </div>
+              <CalendarComponent />
         </div>
       </header>
     </div>

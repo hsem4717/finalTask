@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './Header';
 import SmallBox from './SmallBox';
-import './App.css';
+import './NoticePage.css';
 import { initialVideoTitles, initialOpts, fetchVideoData } from './VideoData';
 import Notice from './Notice'
 function Home() {
@@ -42,10 +42,10 @@ function Home() {
           <SmallBox />
           <div className="HHeader">
               <div className = "Rank_Header">
-              <div className="sun1">공지번호</div>
-              <div className="sun2">제목</div>
-              <div className="sun3">작성자</div>
-              <div className="sun4">등록일</div>
+              <div className="Nsun1">공지번호</div>
+              <div className="Nsun2">제목</div>
+              <div className="Nsun3">작성자</div>
+              <div className="Nsun4">등록일</div>
               </div>
               <Notice videoData={videoData} opts={initialOpts} />
           </div>

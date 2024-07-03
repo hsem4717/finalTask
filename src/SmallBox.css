@@ -1,25 +1,29 @@
 .small-box {
   width: 23%;
-  height:340px;
+  height:680px;
   background-color: white;
   margin-right: auto;
   margin-left:4%;
   margin-top:100px;
   border-radius:20px;
+  display: flex; /* Flexbox 레이아웃 설정 */
+  flex-direction: column; /* 세로 방향으로 요소들을 정렬 */
+  align-items: center;
 }
 
 .logos1 {
-  width: 200px;
-  margin-top:45px;
+  margin-top:85px;
 }
 .logos2 {
-  width: 200px;
-  margin-top:55px;
+  margin-top:105px;
   margin-left:10px;
 }
 
 .logos3 {
-  width: 200px;
-  margin-top:45px;
+  margin-top:105px;
   margin-left:-27px;
+}
+.logos4 {
+  margin-top:100px;
+  margin-left:20px;
 }

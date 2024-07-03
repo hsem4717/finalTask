@@ -147,6 +147,19 @@ app.get('/notice-stats', (req, res) => {
   });
 });
 
+app.get('/calendar', (req, res) => {
+  connection.query('SELECT * FROM reservations', (error, results, fields) => {
+    if (error) {
+      console.error('쿼리 오류:', error);
+      res.status(500).json({ error: '서버 내부 오류' });
+      return;
+    }
+
+    // 예약 데이터를 JSON 형식으로 반환
+    res.json(results);
+  });
+});
+
 // 서버를 3001 포트에서 실행
 const PORT = 3001;
 app.listen(PORT, () => {

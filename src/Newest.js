@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Rank.css';
+import './Newest.css';
 
-const Rank = () => {
+const Newest = () => {
   const [videoStats, setVideoStats] = useState([]);
   const [selectedSinger, setSelectedSinger] = useState('');
 
@@ -19,7 +19,7 @@ const Rank = () => {
           })
         );
 
-        updatedVideoStats.sort((a, b) => b.increase - a.increase);
+        updatedVideoStats.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
         setVideoStats(updatedVideoStats);
       } catch (error) {
         console.error('Failed to fetch video stats:', error);
@@ -36,12 +36,13 @@ const Rank = () => {
       return thumbnailUrl;
     } catch (error) {
       console.error('Failed to fetch YouTube thumbnail:', error);
-      return ''; // Handle error gracefully
+      return '';
     }
   };
 
-  const formatViewCount = (viewCount) => {
-    return viewCount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
+    return date.toISOString().split('T')[0];
   };
 
   const filteredVideoStats = selectedSinger
@@ -49,7 +50,7 @@ const Rank = () => {
     : videoStats;
 
   return (
-    <div className="rank_all">
+    <div>
       <div className="filter">
         <select onChange={(e) => setSelectedSinger(e.target.value)}>
           <option value="">전체</option>
@@ -64,20 +65,17 @@ const Rank = () => {
             <div className="sunup1">
               <div className="rank-number">{index + 1}</div>
             </div>
-            <div className="sunup2">
+            <div className="sunup2-1">
               <div className="video-name">
                 <img src={video.thumbnailUrl} alt="video thumbnail" className="thumbnail-img"/>
               </div>
             </div>
-            <div className="sunup3">
+            <div className="sunup">
               <div>{video.name}</div>
               <div className="singer">{video.singer}</div>
             </div>
-            <div className="sunup4">
-              <div className="increases">{video.increase}</div>
-            </div>
-            <div className="sunup5">
-              <div className="increases">{formatViewCount(video.view_count)}</div>
+            <div className="sunup4-1">
+              <div className="increases">{formatDate(video.timestamp)}</div>
             </div>
           </div>
         ))}
@@ -86,4 +84,4 @@ const Rank = () => {
   );
 };
 
-export default Rank;
+export default Newest;
