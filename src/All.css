@@ -20,24 +20,21 @@
     justify-content: center;
 
  }
- .sunup2{
- width:270px;
+ .sunup2-1{
+ width:400px;
  display:flex;
  justify-content: center;
+
  }
- .sunup3{
-   width:170px;
+ .sunup3-1{
+  width:170px;
    justify-content: center;
    text-align:left;
+   padding-left:30px;
    line-height: 1.6;
-   margin-left:-20px;
  }
- .sunup4{
- width:210px;
-   justify-content: center;
- }
-  .sunup5{
- width:200px;
+ .sunup4-1{
+ width:270px;
    justify-content: center;
  }
 .rank-number{
@@ -63,36 +60,3 @@ color:gray;
 font-size:20px;
 align-items:right;
 }
-.filter {
-  display:inline-block;
-  display: flex;
-  justify-content: flex-end;
-  margin-top:-42.5px;
-}
-
-.filter select {
-  padding: 10px;
-  font-size: 18px;
-  color: #8a2be2;
-  border: 2px solid #black;
-  border-radius: 5px;
-  background:white;
-  width:9%;
-}
-.rank_all{
-}
-.styled-button {
-  background-color: white;
-  border: none;
-  color: white;
-  width: 40px; /* 가로 10px */
-  height: 40px; /* 세로 10px */
-  font-size: 30px; /* 글꼴 크기 */
-  cursor: pointer;
-  padding: 0; /* 패딩 없음 */
-  border-radius:10%;
-}
-.styled-button:hover {
-  background-color: #8a2be2;
-}
-

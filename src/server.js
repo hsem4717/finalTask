@@ -15,7 +15,7 @@ const connection = mysql.createConnection({
 });
 
 // YouTube API 키
-const youtubeApiKey = 'AIzaSyArdwxcFkjfM_3SpKPRPF-Rn1rZ4OPIHBk';
+const youtubeApiKey = 'AIzaSyAVs5_0ygD440T36Sb19rr-5arnkh_m_2I';
 
 // MySQL 연결
 connection.connect(err => {
@@ -159,6 +159,41 @@ app.get('/calendar', (req, res) => {
     res.json(results);
   });
 });
+
+app.get('/update-video-stats', async (req, res) => {
+  try {
+    await updateViewCounts();
+    res.status(200).send('Video stats updated successfully');
+  } catch (error) {
+    console.error('Failed to update video stats:', error);
+    res.status(500).json({ error: 'Failed to update video stats' });
+  }
+});
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.json()); // JSON 형식의 요청 본문 파싱
+
+// 데이터 입력을 위한 엔드포인트 추가
+app.post('/upload-video-stats', (req, res) => {
+  const { video_id, name, singer, timestamp } = req.body;
+
+  if (!video_id || !name || !singer || !timestamp) {
+    res.status(400).json({ error: '모든 필드를 채워주세요.' });
+    return;
+  }
+
+  const query = 'INSERT INTO minute_stats (video_id, name, singer, timestamp) VALUES (?, ?, ?, ?)';
+  connection.query(query, [video_id, name, singer, timestamp], (error, results) => {
+    if (error) {
+      console.error('데이터 삽입 오류:', error); // 오류 로깅
+      res.status(500).json({ error: '서버 내부 오류' });
+      return;
+    }
+
+    res.status(201).json({ message: '데이터가 성공적으로 저장되었습니다.' });
+  });
+});
+
 
 // 서버를 3001 포트에서 실행
 const PORT = 3001;

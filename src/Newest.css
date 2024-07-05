@@ -15,26 +15,25 @@
 
  }
 
- .sunup1{
+ .Asunup1{
     width:150px;
     justify-content: center;
 
  }
- .sunup2-1{
- width:360px;
+ .Asunup2-1{
+ width:240px;
  display:flex;
  justify-content: center;
 
  }
- .sunup{
+ .Asunup3-1{
   width:170px;
    justify-content: center;
    text-align:left;
-   padding-left:100px;
    line-height: 1.6;
  }
- .sunup4-1{
- width:230px;
+ .Asunup4-1{
+ width:220px;
    justify-content: center;
  }
 .rank-number{

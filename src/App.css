@@ -7,7 +7,9 @@
 .backbody {
   position: relative;
   display: flex;
-
+  height: 100vh;
+  padding-left:100px;
+  padding-right:50px;
 }
 .Rank_Header{
 height:100px;
@@ -28,13 +30,13 @@ margin-left:50px;
 }
 .sun2{
 margin-top:55px;
-margin-left:280px;
+margin-left:240px;
 }
 .sun3{
 margin-top:55px;
-margin-left:200px;
+margin-left:190px;
 }
 .sun4{
 margin-top:55px;
-margin-left:90px;
+margin-left:100px;
 }

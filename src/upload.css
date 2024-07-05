@@ -1,0 +1,47 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Increased gap for better spacing */
+  margin: 0 auto;
+  width: 400px; /* Adjusted width for better centering */
+  align-items: center; /* Ensures the form elements are left-aligned */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added a subtle box-shadow for better visual separation */
+  border-radius: 8px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-size: 16px; /* Increased font size */
+  color: #4b0082; /* Darker shade of purple for labels */
+}
+
+input {
+  padding: 10px; /* Increased padding for better readability */
+  border: 2px solid #8a2be2; /* Increased border thickness */
+  border-radius: 4px;
+  width: 100%; /* Full width within the form container */
+  box-sizing: border-box;
+}
+
+.button_up {
+  padding: 12px 20px; /* Adjusted padding for better size */
+  border: none;
+  border-radius: 4px;
+  background-color: #8a2be2;
+  color: white;
+  cursor: pointer;
+  font-size: 16px; /* Increased font size */
+  align-self: center; /* Center align the button */
+}
+
+.upload-heading {
+  color: #8a2be2;
+  font-size: 24px; /* Increased font size */
+  text-align: center; /* Center align the heading */
+  margin-bottom: 20px;
+}
+
+.upAll{
+margin-top:200px;
+}

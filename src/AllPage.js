@@ -1,7 +1,7 @@
 // Home.js
 import Header from './Header';
 import SmallBox from './SmallBox';
-import Newest from './Newest';
+import All from './All';
 import './NoticePage.css';
 function Home() {
   return (
@@ -14,10 +14,10 @@ function Home() {
               <div className = "Rank_Header">
               <div className="Newsun1">순위</div>
               <div className="Newsun2">곡정보</div>
-              <div className="Newsun3">제목</div>
-              <div className="Newsun4">등록일</div>
+              <div className="Newsun3">조회수</div>
+              <div className="NNewsun4">등록일</div>
               </div>
-              <Newest />
+              <All />
           </div>
         </div>
       </header>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Newest.css';
+import './All.css';
 
-const Newest = () => {
+const All = () => {
   const [videoStats, setVideoStats] = useState([]);
   const [selectedSinger, setSelectedSinger] = useState('');
 
@@ -19,7 +19,9 @@ const Newest = () => {
           })
         );
 
-        updatedVideoStats.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+        // Sort by view_count in descending order
+        updatedVideoStats.sort((a, b) => b.view_count - a.view_count);
+
         setVideoStats(updatedVideoStats);
       } catch (error) {
         console.error('Failed to fetch video stats:', error);
@@ -40,11 +42,17 @@ const Newest = () => {
     }
   };
 
-const formatDate = (timestamp) => {
-  const date = new Date(timestamp);
-  date.setDate(date.getDate() + 1);
-  return date.toISOString().split('T')[0];
-};
+  const formatDate = (timestamp) => {
+    const date = new Date(timestamp);
+    date.setDate(date.getDate() + 1);
+    return date.toISOString().split('T')[0];
+  };
+
+  // Function to format view_count with commas
+  const formatViewCount = (count) => {
+    return count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  };
+
   const filteredVideoStats = selectedSinger
     ? videoStats.filter(video => video.singer === selectedSinger)
     : videoStats;
@@ -62,19 +70,22 @@ const formatDate = (timestamp) => {
       <div className="rank-box">
         {filteredVideoStats.map((video, index) => (
           <div key={index} className="rank-header">
-            <div className="sunup1">
+            <div className="Asunup1">
               <div className="rank-number">{index + 1}</div>
             </div>
-            <div className="sunup2-1">
+            <div className="Asunup2-1">
               <div className="video-name">
                 <img src={video.thumbnailUrl} alt="video thumbnail" className="thumbnail-img"/>
               </div>
             </div>
-            <div className="sunup3-1">
+            <div className="Asunup3-1">
               <div>{video.name}</div>
               <div className="singer">{video.singer}</div>
             </div>
-            <div className="sunup4-1">
+            <div className="Asunup4-1">
+              <div className="increases">{formatViewCount(video.view_count)}</div>
+            </div>
+            <div className="Asunup4-1">
               <div className="increases">{formatDate(video.timestamp)}</div>
             </div>
           </div>
@@ -84,4 +95,4 @@ const formatDate = (timestamp) => {
   );
 };
 
-export default Newest;
+export default All;

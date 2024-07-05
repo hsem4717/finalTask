@@ -5,6 +5,7 @@ import Home from './Home';
 import UploadPage from './UploadPage';
 import NoticePage from './NoticePage'
 import NewestPage from './NewestPage'
+import AllPage from './AllPage'
 import Content from './Content';
 import CalendarPage from './CalendarPage';
 import './Header.css'; // 필요한 스타일링이 있으면 이 파일에 추가
@@ -20,6 +21,7 @@ function App() {
           <Route path="/content/:id" element={<Content />} />
           <Route path="/newest" element={<NewestPage />} />
           <Route path="/calendar" element={<CalendarPage/>} />
+          <Route path="/all" element={<AllPage/>} />
         </Routes>
       </div>
     </Router>

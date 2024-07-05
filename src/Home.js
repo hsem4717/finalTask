@@ -5,10 +5,10 @@ import SmallBox from './SmallBox';
 import Rank from './Rank';
 import './Header.css'; // 필요한 스타일링이 있으면 이 파일에 추가
 import './App.css';
-import { initialVideoTitles, initialOpts, fetchVideoData } from './VideoData';
+import { fetchVideoData } from './VideoData';
 function Home() {
-  const [viewCounts, setViewCounts] = useState({});
-  const [viewCountDifferences, setViewCountDifferences] = useState({});
+  const [, setViewCounts] = useState({});
+  const [, setViewCountDifferences] = useState({});
   const [, setSortedVideoIds] = useState([]);
 
   useEffect(() => {
@@ -29,12 +29,6 @@ function Home() {
     return () => clearInterval(intervalId);
   }, []);
 
-  const videoData = {
-    viewCounts,
-    viewCountDifferences,
-    videoTitles: initialVideoTitles,
-  };
-
   return (
     <div className="App">
       <Header />
@@ -48,7 +42,7 @@ function Home() {
               <div className="sun3">조회수 증가량</div>
               <div className="sun4">조회수</div>
               </div>
-              <Rank videoData={videoData} opts={initialOpts} />
+              <Rank />
           </div>
         </div>
       </header>
